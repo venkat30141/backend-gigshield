@@ -12,6 +12,7 @@ public class WorkerService {
     @Autowired
     private WorkerRepository workerRepository;
 
+    // Worker Registration
     public Worker registerWorker(Worker worker) {
 
         if(workerRepository.existsByPhone(worker.getPhone())){
@@ -31,5 +32,13 @@ public class WorkerService {
         }
 
         return workerRepository.save(worker);
+    }
+
+    // Worker Login
+    public Worker login(String phone, String aadhaar){
+
+        return workerRepository
+                .findByPhoneAndAadhaar(phone, aadhaar)
+                .orElseThrow(() -> new RuntimeException("Invalid phone or Aadhaar"));
     }
 }

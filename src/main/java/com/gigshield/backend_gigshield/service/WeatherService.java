@@ -23,4 +23,17 @@ public class WeatherService {
 
         return restTemplate.getForObject(url, String.class);
     }
+
+    // Detect disruption weather
+    public boolean isDisruption(String weatherResponse){
+
+        if(weatherResponse.contains("Rain") ||
+           weatherResponse.contains("Thunderstorm") ||
+           weatherResponse.contains("Storm")) {
+
+            return true;
+        }
+
+        return false;
+    }
 }

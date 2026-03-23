@@ -4,8 +4,7 @@ public class DisruptionRequest {
 
     private Long workerId;
     private Long policyId;
-    private String disruptionType;
-    private int disruptionDays;
+    private String city;
 
     public Long getWorkerId() {
         return workerId;
@@ -23,19 +22,11 @@ public class DisruptionRequest {
         this.policyId = policyId;
     }
 
-    public String getDisruptionType() {
-        return disruptionType;
+    public String getCity() {
+        return city;
     }
 
-    public void setDisruptionType(String disruptionType) {
-        this.disruptionType = disruptionType;
-    }
-
-    public int getDisruptionDays() {
-        return disruptionDays;
-    }
-
-    public void setDisruptionDays(int disruptionDays) {
-        this.disruptionDays = disruptionDays;
+    public void setCity(String city) {
+        this.city = city;
     }
 }
